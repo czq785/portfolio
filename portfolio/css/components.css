@@ -187,6 +187,39 @@
 
 .menu-btn svg { width: 20px; height: 20px; }
 
+/* 主题切换按钮：固定在页面右上角（移动端位于菜单按钮左侧） */
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 50;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--sidebar-bg);
+  color: #fff;
+  box-shadow: var(--shadow-hover);
+  transition: color 0.2s;
+}
+
+.theme-toggle:hover { color: var(--accent); }
+
+.theme-toggle svg { width: 20px; height: 20px; }
+
+/* 浅色时显示月亮（点击切深色），深色时显示太阳（点击切浅色） */
+.theme-toggle .icon-sun { display: none; }
+
+html[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+/* 深色模式下按钮与背景接近，加一圈浅描边保证可见 */
+html[data-theme="dark"] .theme-toggle,
+html[data-theme="dark"] .menu-btn {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
 .overlay {
   position: fixed;
   inset: 0;
@@ -201,6 +234,7 @@
 
 @media (max-width: 900px) {
   .menu-btn { display: grid; place-items: center; }
+  .theme-toggle { right: 68px; }
 
   .drawer-close {
     display: block;
@@ -476,7 +510,7 @@
   margin-left: auto;
   font-size: 0.86rem;
   font-weight: 600;
-  color: #45403a;
+  color: var(--text-soft);
 }
 
 .project-name { font-size: 1.45rem; font-weight: 700; }
@@ -495,7 +529,7 @@
 .project-desc {
   font-size: 0.95rem;
   line-height: 1.85;
-  color: #5c564e;
+  color: var(--text-soft);
 }
 
 .tech-list {
@@ -509,7 +543,7 @@
 .tech-list li {
   padding: 4px 12px;
   border-radius: 999px;
-  background: #f2efe9;
+  background: var(--chip-bg);
   font-size: 0.78rem;
   color: var(--text-soft);
 }
