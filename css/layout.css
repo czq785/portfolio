@@ -1,0 +1,49 @@
+/* ============ 桌面端：左侧固定栏 + 右侧滚动主区 ============ */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: var(--sidebar-w);
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  overflow-y: auto;
+  z-index: 40;
+}
+
+.main {
+  margin-left: var(--sidebar-w);
+  padding: 64px clamp(24px, 5vw, 72px) 0;
+}
+
+.main > section {
+  max-width: 920px;
+  margin-bottom: 96px;
+  scroll-margin-top: 24px;
+}
+
+/* ============ 移动端（≤900px）：侧栏变抽屉，内容单栏 ============ */
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: min(300px, 82vw);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.35);
+  }
+
+  .sidebar.open { transform: none; }
+
+  .main {
+    margin-left: 0;
+    max-width: 720px;
+    margin-inline: auto;
+    padding: 28px 20px 0;
+  }
+
+  .main > section {
+    margin-bottom: 72px;
+    scroll-margin-top: 84px;
+  }
+}

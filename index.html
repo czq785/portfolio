@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="陈芷崎的个人作品集：个人介绍、专业技能与项目作品展示。">
+  <title>陈芷崎 · 个人作品集</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ff6b35'/%3E%3Ctext x='16' y='23' font-size='18' font-family='sans-serif' font-weight='bold' text-anchor='middle' fill='%23fff'%3E%E9%99%88%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <!-- 在渲染前同步应用已保存的主题，避免刷新时闪烁 -->
+  <script src="js/theme.js"></script>
+</head>
+<body>
+
+  <!-- ==================== 左侧边栏（个人介绍 / 技能 / 导航 / 联系） ==================== -->
+  <aside class="sidebar" id="sidebar">
+    <button class="drawer-close" id="drawerClose" aria-label="关闭菜单">&times;</button>
+    <div class="sidebar-inner">
+
+      <div class="profile">
+        <img class="avatar"
+             src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20portrait%20photo%20of%20a%20young%20Chinese%20female%20university%20student%2C%20friendly%20confident%20smile%2C%20casual%20shirt%2C%20soft%20lighting%2C%20clean%20neutral%20background%2C%20head%20and%20shoulders&image_size=square"
+             alt="陈芷崎的头像">
+        <h1 class="name">陈芷崎<span class="name-dot">.</span></h1>
+        <p class="role">数据科学与大数据技术<br>AI辅助应用开发 / 大数据技术应用</p>
+        <span class="status-badge"><i></i>广州软件学院 · 在读</span>
+      </div>
+
+      <p class="intro">数据科学与大数据技术专业学生，关注 AI 辅助应用开发与大数据技术的应用。</p>
+
+      <section class="side-section" id="skills">
+        <h2 class="side-title">专业技能</h2>
+        <ul class="skill-tags">
+          <li>Python</li>
+          <li>MySQL</li>
+          <li>数据分析</li>
+          <li>可视化</li>
+        </ul>
+      </section>
+
+      <nav class="nav" aria-label="页面导航">
+        <a href="#hero">首页</a>
+        <a href="#works">项目作品</a>
+        <a href="#about">关于我</a>
+        <a href="#contact">联系方式</a>
+      </nav>
+
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- 移动端菜单按钮 -->
+  <button class="menu-btn" id="menuBtn" aria-label="打开菜单">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+  </button>
+
+  <!-- 主题切换按钮（页面右上角） -->
+  <button class="theme-toggle" id="themeToggle" aria-label="切换到深色主题">
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.2A8.5 8.5 0 0 1 10.8 3.4a8.5 8.5 0 1 0 9.8 9.8z"/></svg>
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M19.1 4.9l-1.6 1.6M6.5 17.5l-1.6 1.6"/></svg>
+  </button>
+
+  <!-- ==================== 右侧主内容区 ==================== -->
+  <main class="main">
+
+    <!-- 首屏 -->
+    <section id="hero" class="hero">
+      <p class="hero-kicker">个人作品集 · Portfolio 2026</p>
+      <div class="hero-id">
+        <img class="hero-avatar"
+             src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20portrait%20photo%20of%20a%20young%20Chinese%20female%20university%20student%2C%20friendly%20confident%20smile%2C%20casual%20shirt%2C%20soft%20lighting%2C%20clean%20neutral%20background%2C%20head%20and%20shoulders&image_size=square"
+             alt="陈芷崎的头像">
+        <div class="hero-id-text">
+          <strong>陈芷崎</strong>
+          <span>广州软件学院 · 数据科学与大数据技术</span>
+        </div>
+        <span class="status-badge"><i></i>在读</span>
+      </div>
+      <h1 class="hero-title">你好，我是<span class="highlight">陈芷崎</span>，<br>数据科学与大数据技术专业学生。</h1>
+      <p class="hero-sub">目前主要关注 AI 辅助应用开发与大数据技术的应用，平时主要使用 Python、MySQL 进行项目开发，也在持续学习数据分析、可视化等技能。</p>
+      <div class="hero-actions">
+        <a class="btn btn-accent" href="#works">浏览我的作品</a>
+        <a class="btn btn-ghost" href="#contact">与我联系</a>
+      </div>
+    </section>
+
+    <!-- 项目作品（数据驱动渲染） -->
+    <section id="works" class="works">
+      <div class="section-head">
+        <p class="section-en">Selected Works</p>
+        <h2 class="section-title">项目作品 <span class="section-count">共 <b id="projectCount">0</b> 个</span></h2>
+      </div>
+      <div id="projectList" class="works-list"><!-- 由 js/render.js 渲染 --></div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="about">
+      <div class="section-head">
+        <p class="section-en">About Me</p>
+        <h2 class="section-title">关于我</h2>
+      </div>
+      <div class="about-grid">
+        <img class="about-img"
+             src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=minimalist%20developer%20workspace%2C%20laptop%20with%20code%20editor%20on%20screen%2C%20notebook%20and%20coffee%20cup%2C%20warm%20morning%20light%2C%20clean%20aesthetic%20photography&image_size=landscape_4_3"
+             alt="我的工作台" loading="lazy">
+        <div class="about-text">
+          <p>我叫陈芷崎，是一名数据科学与大数据技术专业的学生，目前主要关注 AI 辅助应用开发与大数据技术的应用。</p>
+          <p>平时主要使用 Python、MySQL 进行项目开发，也在持续学习数据分析、可视化等技能。</p>
+          <ul class="fact-list">
+            <li><span>学校</span>广州软件学院 · 在读</li>
+            <li><span>专业</span>数据科学与大数据技术</li>
+            <li><span>方向</span>AI辅助应用开发 / 大数据技术应用</li>
+            <li><span>城市</span>中国 · 广州</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="contact">
+      <div class="section-head">
+        <p class="section-en">Get in Touch</p>
+        <h2 class="section-title">联系方式</h2>
+      </div>
+      <p class="contact-lead">如需交流项目或课程相关内容，<br>欢迎通过老师、同学与我联系。</p>
+      <div class="social-row">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span>中国 · 广州</span>
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>
+          <span>广州软件学院 · 在读</span>
+        </span>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© <span id="year"></span> 陈芷崎 · 个人作品集</span>
+      <span>原生 HTML / CSS / JavaScript 构建</span>
+    </footer>
+
+  </main>
+
+  <script src="js/projects.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
